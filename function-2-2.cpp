@@ -1,9 +1,11 @@
-int binary_to_number(int binary_digits[],int number_of_digits)
+int maximum_sum(int *nums,int length)
 {
-int ans=0;
-for(int i=0;i<number_of_digits;i++)
+if(length<1)return 0;
+int tmp=max(0,*nums),ans=max(0,*nums);
+for(int i=1;i<length;i++)
 {
-ans=ans*2+binary_digits[i];
+tmp=max(0,tmp+(*(nums+i)));
+ans=max(ans,tmp);
 }
 return ans;
 }
